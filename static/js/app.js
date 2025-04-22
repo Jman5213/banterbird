@@ -20,14 +20,12 @@ async function submitPost() {
                 message,
             }),
         });
-        document.getElementById("postInput").value = "";
-        loadAndDisplayPosts();
     } catch {
         console.error("⚠️ Error! ⚠️ ", error);
     }
 }
 
-async function loadAndDisplayPosts() {
+window.onload = async () => {
     try {
         const response = await fetch("/api/posts");
         const posts = await response.json();
@@ -40,5 +38,3 @@ async function loadAndDisplayPosts() {
         console.error("Error:", error);
     }
 };
-
-window.onload = loadAndDisplayPosts;
