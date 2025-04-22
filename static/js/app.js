@@ -7,16 +7,31 @@ function renderPost(post) {
     document.getElementById("feed").appendChild(template);
 }
 
-function submitPost() {
+async function submitPost() {
     const message = document.getElementById("postInput").value;
-    console.log("Would post:", message);
-    alert("Tweet submitted (not really yet)");
+    try {
+        const response = await fetch("/api/create/post", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                username,
+                message,
+            }),
+        });
+        document.getElementById("postInput").value = "";
+        loadAndDisplayPosts();
+    } catch {
+        console.error("⚠️ Error! ⚠️ ", error);
+    }
 }
 
-window.onload = async () => {
+async function loadAndDisplayPosts() {
     try {
         const response = await fetch("/api/posts");
         const posts = await response.json();
+        document.getElementById("feed").innerHTML = "";
         posts.forEach(post => {
             renderPost(post);
         });
@@ -25,3 +40,5 @@ window.onload = async () => {
         console.error("Error:", error);
     }
 };
+
+window.onload = loadAndDisplayPosts;

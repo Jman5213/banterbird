@@ -1,6 +1,10 @@
 [
     {
         "username": "admin",
+        "message": "nothing"
+    },
+    {
+        "username": "admin",
         "message": "Welcome to Banterbird!"
     },
     {
