@@ -1,29 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Banterbird</title>
-    <script src="/static/js/app.js" defer></script>
-</head>
-<body>
-    <h1>Banterbird</h1>
+{% extends "base.html" %}
+{% block content %}
     <div>
         Logged in as: <strong id="username">admin</strong>
     </div>
     <div>
-        <h3>New Post</h3>
-        <textarea id="postInput" placeholder="What's on your mind?" style="resize: none;" rows="6" cols="50"></textarea><br>
-        <button onclick="submitPost()">Tweet</button>
+        <h3>New Post:</h3>
+        <textarea id="postInput" placeholder="What's on your mind?" rows="6" cols="50"></textarea><br>
+        <button onclick="submitPost()">Tweet</button> <--add title section !-->
     </div>
     <hr>
     <h3>Feed</h3>
     <div id="feed"></div>
 
     <template id="post-template">
-        <div class="post">
-            <p><strong class="username"></strong>: <span class="message"></span></p>
-            <small class="timestamp"></small>
+        <div class="post simpleFont">
+            <p>@<strong class="username simpleFontBold"></strong>: <span class="post-title"></span></p> <-- make a link !-->
             <hr>
+            <span class="message"></span>
+            <small class="timestamp"></small>
         </div>
     </template>
-</body>
-</html>
+{% endblock %}

@@ -4,6 +4,7 @@ function renderPost(post, isNew=false) {
     const template = document.getElementById("post-template").content.cloneNode(true);
     template.querySelector(".username").innerText = post.username;
     template.querySelector(".message").innerText = post.message;
+    template.querySelector(".post-title").innerText = post.title;
 
     if (isNew){
         document.getElementById("feed").prepend(template);
@@ -23,10 +24,11 @@ async function submitPost() {
             body: JSON.stringify({
                 username,
                 message,
+                title,
             }),
         });
         if (response.ok) {
-            renderPost({username, message}, true);
+            renderPost({username, message, title}, true);
             document.getElementById("postInput").value = "";
         }
     } catch (error) {

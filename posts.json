@@ -1,30 +1,22 @@
 [
     {
         "username": "admin",
-        "message": "c"
+        "message": "nothing",
+        "title": "nah"
     },
     {
         "username": "admin",
-        "message": "a"
-    },
-    {
-        "username": "admin",
-        "message": "b"
-    },
-    {
-        "username": "admin",
-        "message": "nothing"
-    },
-    {
-        "username": "admin",
-        "message": "Welcome to Banterbird!"
+        "message": "Welcome to Banterbird!",
+        "title": "Welcome!"
     },
     {
         "username": "chad",
-        "message": "Excited to be here!"
+        "message": "Excited to be here!",
+        "title": "Excitement!"
     },
     {
         "username": "bob",
-        "message": "Just joined. Let's tweet!"
+        "message": "Just joined. Let's tweet!",
+        "title": "Let's Chat!"
     }
 ]
