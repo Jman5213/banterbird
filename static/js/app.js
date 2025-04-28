@@ -15,6 +15,7 @@ function renderPost(post, isNew=false) {
 
 async function submitPost() {
     const message = document.getElementById("postInput").value;
+    const title = document.getElementById("titleInput").value;
     try {
         const response = await fetch("/api/create/post", {
             method: "POST",
@@ -30,6 +31,7 @@ async function submitPost() {
         if (response.ok) {
             renderPost({username, message, title}, true);
             document.getElementById("postInput").value = "";
+            document.getElementById("titleInput").value = "";
         }
     } catch (error) {
         console.error("⚠️ Error! ⚠️ ", error);

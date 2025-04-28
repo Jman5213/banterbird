@@ -24,6 +24,7 @@ body {
     font-family: 'Comfortaa';
     background-color: #607e96;
     padding: 20px;
+    color: #153448;
 }
 
 #feed {
@@ -95,4 +96,39 @@ a:hover {
 
 textarea {
     font-family: 'Comfortaa';
+}
+
+#titleInput {
+    border-radius:7px;
+    padding: 5px;
+    background-color: #bec9d4;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-family: 'Comfortaa';
+}
+
+#submitPost {
+    border-radius:7px;
+    background-color: #bec9d4;
+    border: 2px solid #607e96;
+    font-size: 1.2em;
+    font-family: 'Comfortaa';
+    padding: 10px 20px 10px 20px;
+}
+
+#submitPost:hover {
+    background-color: #607e96;
+    color: #bec9d4;
+    border: 2px solid #bec9d4;
+}
+
+label{
+    font-size: 1.2em;
+    font-family: 'Comfortaa';
+    font-weight: bold;
+}
+
+#username {
+    color: #051e33;
 }

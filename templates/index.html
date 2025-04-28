@@ -1,20 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
     <div>
-        Logged in as: <strong id="username">admin</strong>
-    </div>
-    <div>
-        <h3>New Post:</h3>
-        <textarea id="postInput" placeholder="What's on your mind?" rows="6" cols="50"></textarea><br>
-        <button onclick="submitPost()">Tweet</button> <--add title section !-->
+        Logged in as: <a><strong id="username">@admin</strong></a>
     </div>
     <hr>
-    <h3>Feed</h3>
+    <div>
+        <h1><strong>New Post:</strong></h1>
+        <label for="titleInput">Title:</label><br>
+        <input type="text" id="titleInput" placeholder="Big Title"><br>
+        <label for="postInput">Post:</label><br>
+        <textarea id="postInput" placeholder="What's on your mind?" rows="6" cols="50"></textarea><br>
+        <button id="submitPost" onclick="submitPost()">Banter!</button>
+    </div>
+    <hr>
+    <h1>Your Feed:</h1>
     <div id="feed"></div>
 
     <template id="post-template">
         <div class="post simpleFont">
-            <p>@<strong class="username simpleFontBold"></strong>: <span class="post-title"></span></p> <-- make a link !-->
+            <p><a href="<!--idk!-->">@<strong class="username simpleFontBold"></strong></a>: <span class="post-title"></span></p>
             <hr>
             <span class="message"></span>
             <small class="timestamp"></small>
