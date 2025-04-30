@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-    <div>
-        Logged in as: <a><strong id="username">@admin</strong></a>
+    {% if username %}
+    <div id="userLoggedIn" data-username="{{ username }}">
+        Logged in as: <a href="/user/{{ username }}"><strong id="username">@{{ username }}</strong></a>
     </div>
     <hr>
     <div>
@@ -12,13 +13,18 @@
         <textarea id="postInput" placeholder="What's on your mind?" rows="6" cols="50"></textarea><br>
         <button id="submitPost" onclick="submitPost()">Banter!</button>
     </div>
+    {% else %}
+    <div>
+        <p>Please <a href="/login">login</a> to post content.</p>
+    </div>
+    {% endif %}
     <hr>
     <h1>Your Feed:</h1>
     <div id="feed"></div>
 
     <template id="post-template">
         <div class="post simpleFont">
-            <p><a href="<!--idk!-->">@<strong class="username simpleFontBold"></strong></a>: <span class="post-title"></span></p>
+            <p><a href="#" class="usernameLink">@<strong class="username simpleFontBold"></strong></a>: <span class="post-title"></span></p>
             <hr>
             <span class="message"></span>
             <small class="timestamp"></small>
