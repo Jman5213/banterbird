@@ -1,0 +1,32 @@
+[
+    {
+        "message": "no",
+        "title": "yeah",
+        "username": "Jordan"
+    },
+    {
+        "username": "admin",
+        "message": "b",
+        "title": "a"
+    },
+    {
+        "username": "admin",
+        "message": "nothing",
+        "title": "nah"
+    },
+    {
+        "username": "admin",
+        "message": "Welcome to Banterbird!",
+        "title": "Welcome!"
+    },
+    {
+        "username": "chad",
+        "message": "Excited to be here!",
+        "title": "Excitement!"
+    },
+    {
+        "username": "bob",
+        "message": "Just joined. Let's tweet!",
+        "title": "Let's Chat!"
+    }
+]

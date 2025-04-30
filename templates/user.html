@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="profile-container">
+        <h1>User Profile: @{{ profile_user }}</h1>
+        
+        <div class="profile-info">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <!-- Placeholder for profile image -->
+                    <div class="avatar-placeholder">{{ profile_user[0] | upper }}</div>
+                </div>
+                <div class="profile-details">
+                    <h2>@{{ profile_user }}</h2>
+                    <p>Member since: <em>Recently</em></p>
+                </div>
+            </div>
+            
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Following</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Followers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">0</span>
+                    <span class="stat-label">Posts</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="recent-activity">
+            <h3>Recent Posts</h3>
+            <div class="user-posts">
+                <p>No posts yet!</p>
+            </div>
+        </div>
+    </div>
+    
+    {% if username == profile_user %}
+    <div class="profile-actions">
+        <a href="#" class="button edit-profile-btn">Edit Profile</a>
+    </div>
+    {% endif %}
+{% endblock %}
